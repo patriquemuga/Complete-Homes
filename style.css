@@ -661,3 +661,8 @@ footer {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 }
+
+.btn:focus, a:focus {
+    outline: 2px dashed var(--primary-green);
+    outline-offset: 3px;
+}
