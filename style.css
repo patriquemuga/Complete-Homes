@@ -1,12 +1,12 @@
  /* Global Styles */ 
 :root { 
-    --primary-green: #2E8B57; 
-    --dark-green: #1F5F3E; 
-    --light-green: #8FBC8F; 
+    --primary-green: #4CAF50; 
+    --dark-green: #333333; 
+    --light-green: #4CAF50; 
     --black: #333333; 
-    --off-white: #F5F5F5; 
+    --off-white: #FBE9E7; 
     --white: #FFFFFF; 
-} 
+}
 
 *{ 
     margin: 0; 
@@ -74,7 +74,7 @@ a:hover {
 }
 
 section {
-    padding: 80px 0;
+    padding: 40px 0;
 }
 
 section:nth-child(even) {
@@ -139,7 +139,7 @@ nav {
     font-size: 14px;
     font-weight: 700;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: var(--primary-green);
+    color: var(--dark-green);
     margin-left: 10px;
 }
 
@@ -283,7 +283,7 @@ nav {
 
  .hero-logo-bg {
             position: absolute;
-            top: 80%;
+            top: 56%;
             left: 50%;
             transform: translate(-50%, -50%);
             width: 100%;
@@ -334,11 +334,11 @@ nav {
     text-align: center;
     background-color: var(--primary-green);
     color: var(--white);
-    padding: 80px 0;
+    padding: 12px 0;
 }
 
 .mission-vision h2 {
-    color: var(--white);
+    color: var(--black);
 }
 
 .mission-vision-cards {
@@ -520,6 +520,48 @@ nav {
 .testimonial-author p {
     color: var(--primary-green);
     font-weight: 500;
+}
+
+.testimonial-slider {
+    overflow: hidden;
+    position: relative;
+    width: 300%;
+}
+
+.testimonial-track {
+    display: flex;
+    width: calc(320px * 8);
+    animation: scrollTestimonials 40s linear infinite;
+}
+
+.testimonial-card {
+    flex: 0 0 auto;
+    width: 300px;
+    margin-right: 20px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Optional: Adjust testimonial text */
+.testimonial-card p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Animation */
+@keyframes scrollTestimonials {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-320px * 4));
+    }
+}
+
+.testimonial-slider:hover .testimonial-track {
+    animation-play-state: paused;
 }
 
 /* Contact/Footer */

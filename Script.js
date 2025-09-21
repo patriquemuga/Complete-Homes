@@ -39,4 +39,19 @@ document.addEventListener('DOMContentLoaded', function() {
             mobileMenuBtn.innerHTML = '☰';
         }
     });
+
+    // Testimonials Carousel
+    const track = document.querySelector('.testimonial-track');
+  let position = 0;
+
+  function moveSlider() {
+    position -= 1;
+    if (Math.abs(position) >= track.scrollWidth / 2) {
+      position = 0;
+    }
+    track.style.transform = `translateX(${position}px)`;
+    requestAnimationFrame(moveSlider);
+  }
+
+  moveSlider();
 });
