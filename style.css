@@ -1,4 +1,4 @@
- /* Global Styles */ 
+/* Global Styles */ 
 :root { 
     --primary-green: #4CAF50; 
     --dark-green: #333333; 
@@ -23,6 +23,7 @@ body {
     background-color: var(--off-white);
     color: var(--black);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
@@ -465,11 +466,8 @@ nav {
 .testimonials {
     background-color: var(--off-white);
     text-align: center;
-}
-
-.testimonial-slider {
-    max-width: 800px;
-    margin: 0 auto;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 .testimonial {
@@ -525,12 +523,14 @@ nav {
 .testimonial-slider {
     overflow: hidden;
     position: relative;
-    width: 300%;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .testimonial-track {
     display: flex;
-    width: calc(320px * 8);
+    width: max-content;
     animation: scrollTestimonials 40s linear infinite;
 }
 
@@ -550,13 +550,27 @@ nav {
     line-height: 1.6;
 }
 
+@media (max-width: 768px) {
+    .testimonial-card {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .testimonial-track {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
 /* Animation */
 @keyframes scrollTestimonials {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-320px * 4));
+        transform: translateX(-50%);
     }
 }
 
