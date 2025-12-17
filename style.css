@@ -556,11 +556,13 @@ nav {
         margin: 0 auto;
     }
 
-    .testimonial-track {
-        display: flex;
-        flex-wrap: nowrap;
+    .testimonial-slider {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
+    }
+
+    .testimonial-card {
+        margin: 10px auto;
     }
 }
 
@@ -715,6 +717,22 @@ footer {
     
     .team-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+/* Ensure testimonials are visible on mobile screens */
+@media (max-width: 768px) {
+    .testimonials {
+        overflow-x: visible;
+    }
+
+    .testimonial-slider {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .testimonial-card {
+        margin: 10px auto;
     }
 }
 
