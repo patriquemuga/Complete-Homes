@@ -521,17 +521,16 @@ nav {
 }
 
 .testimonial-slider {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    overflow: visible;
+    animation: none;
 }
 
 .testimonial-track {
-    display: flex;
-    width: max-content;
-    animation: scrollTestimonials 40s linear infinite;
+    display: contents;
+    animation: none;
 }
 
 .testimonial-card {
@@ -564,20 +563,6 @@ nav {
     .testimonial-card {
         margin: 10px auto;
     }
-}
-
-/* Animation */
-@keyframes scrollTestimonials {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-.testimonial-slider:hover .testimonial-track {
-    animation-play-state: paused;
 }
 
 /* Contact/Footer */
